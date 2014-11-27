@@ -65,7 +65,6 @@ angular.module('ProductReviewApp', ['ui.bootstrap'])
 		};//end of incrementRating
 
 		$scope.deleteComment = function(comment) {
-			debugger;
 			$scope.deleting = true;
 			var index = $scope.comments.indexOf(comment);
 			$scope.comments.splice(index, 1);
