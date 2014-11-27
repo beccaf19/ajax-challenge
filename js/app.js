@@ -45,7 +45,7 @@ angular.module('ProductReviewApp', ['ui.bootstrap'])
 				});
 		}; // end of addComment
 		$scope.incrementRating = function(comment, amount){
-			$scope.updating = true;
+			$scope.incrementing = true;
 				$http.put(productUrl + '/' + comment.objectId, {
 					score: {
 						__op: 'Increment',
@@ -60,7 +60,7 @@ angular.module('ProductReviewApp', ['ui.bootstrap'])
 					console.log(err);
 				})
 				.finally(function(){
-					$scope.updating = false;
+					$scope.incrementing = false;
 				})
 		};//end of incrementRating
 

@@ -42,7 +42,7 @@
                     </div>
                     <div class='form-group'>
                         <button type='submit' class='btn btn-primary' ng-disabled='updating'>Add Comment</button>
-                        <img src="img/ajax-spinner.gif" alt = "loading animation" ng-if="loading"/>
+                        <img src="img/ajax-spinner.gif" alt = "loading animation" ng-if="loading || updating"/>
                     </div>
                  </form>
                 <!--  
@@ -73,7 +73,8 @@
                             <p>
                                 {{comment.score || 0}}
                                 <span class ='glyphicon glyphicon-thumbs-up' ng-click='incrementRating(comment, 1)' ng-disabled='updating'></span>
-                                <span class='glyphicon glyphicon-thumbs-down' ng-click='incrementRating(comment, -1)' ng-if="comment.score != 0" ng-disabled='updating'></span>
+                                <span class='glyphicon glyphicon-thumbs-down' ng-click='incrementRating(comment, -1)' ng-if="comment.score != 0" ng-disabled='incrementing'></span>
+                                <img src="img/ajax-spinner-sm.gif" alt = "loading animation" ng-if="incrementing"/>
                             </p>
                             <p> 
                                 <button class='btn btn-primary' ng-click='deleteComment(comment)' ng-disabled= 'deleting'>Delete</button>
